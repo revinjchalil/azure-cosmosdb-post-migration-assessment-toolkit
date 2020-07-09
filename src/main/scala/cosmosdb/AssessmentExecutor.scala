@@ -322,12 +322,11 @@ case class QueryResultsArray(query: String,
 object AssessmentExecutor {
   def main(args: Array[String]): Unit = {
     val conf = new SparkConf(true)
-    conf.setAppName("QueryExecution")
-    val sparkSession =
-      SparkSession.builder.enableHiveSupport().config(conf).getOrCreate()
+    conf.setAppName("AssessmentExecutor")
+    val sparkSession = SparkSession.builder.enableHiveSupport().config(conf).getOrCreate()
     val optionParser = ToolkitOptionsParser()
     val argValues = optionParser.parseOptions(args)
-    val cosmosColsToDrop = Seq("_attachments", "_etag", "_lsn", "_rid", "_self")
+    val cosmosColsToDrop = Seq("_attachments", "_etag", "_lsn", "_rid", "_self", "_metadata")
 
     val srcTSConfig = Map(
       "spark.cosmos.accountendpoint" -> s"${argValues.srcCosmosEndpoint}",
