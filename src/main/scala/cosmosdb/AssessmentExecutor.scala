@@ -149,7 +149,7 @@ class AssessmentExecutor(sparkSession: SparkSession,
     try {
       val startTimeLocal = DateTime.now().toString()
 
-      val cellCompareQueryString = "select * from dfsrcTS order by 1 limit 1"
+      val cellCompareQueryString = "select * from dfsrcTS order by id limit 2"
 //      if (cellComparisonWhereClause.isDefined) cellCompareQueryString += s" where ${cellComparisonWhereClause.get.toString}"
 //      if (cellComparisonSortField.isDefined) cellCompareQueryString += s" order by ${cellComparisonSortField.get.toString}" else cellCompareQueryString += s" order by 1"
 //      if (cellComparisonRecordsLimit.isDefined) cellCompareQueryString += s" limit ${cellComparisonRecordsLimit.get.toString}" else cellCompareQueryString += s" limit 10"
