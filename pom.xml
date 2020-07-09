@@ -120,7 +120,7 @@
                                     </excludes>
                                 </filter>
                             </filters>
-                            <minimizeJar>true</minimizeJar>
+<!--                            <minimizeJar>true</minimizeJar>-->
 <!--                            <artifactSet>-->
 <!--                                <includes>-->
 <!--                                    <include>com.fasterxml.jackson.core:jackson-core</include>-->
