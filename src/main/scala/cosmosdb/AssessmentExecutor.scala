@@ -279,6 +279,9 @@ class AssessmentExecutor(sparkSession: SparkSession,
     }
 
   private def createResultsTableIfNotExists() : Unit = {
+    val metricsDBDDL = s"CREATE DATABASE IF NOT EXISTS ${resultsDBName}"
+    sparkSession.sql(metricsDBDDL)
+
     val metricsTableDDL = s"""CREATE TABLE IF NOT EXISTS ${resultsDBName}.${resultsTableName}(
                               query String,
                               queryType String,
